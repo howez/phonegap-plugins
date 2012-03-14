@@ -9,11 +9,13 @@
 //
 
 #import "NotificationEx.h"
-#ifdef PHONEGAP_FRAMEWORK
-    #import <PhoneGap/Categories.h>
+
+#ifdef CORDOVA_FRAMEWORK
+#import <CORDOVA/NSDictionary+Extensions.h>
 #else
-    #import "Categories.h"
-#endif 
+#import "NSDictionary+Extensions.h"
+#endif
+
 #import "UIColor-Expanded.h"
 
 
@@ -81,7 +83,7 @@
 		}
 	} 
 	
-	self.loadingView = [NExLoadingView loadingViewInView:[super appViewController].view strokeOpacity:strokeOpacity 
+	self.loadingView = [NExLoadingView loadingViewInView:[super viewController].view strokeOpacity:strokeOpacity 
 									backgroundOpacity:backgroundOpacity 
 										  strokeColor:strokeColor fullScreen:fullScreen labelText:labelText 
 									  bounceAnimation:bounceAnimation boxLength:boxLength];

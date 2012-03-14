@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioServices.h>
-#ifdef PHONEGAP_FRAMEWORK
-	#import <PhoneGap/PGPlugin.h>
+#ifdef CORDOVA_FRAMEWORK
+#import <CORDOVA/CDVPlugin.h>
 #else
-	#import "PGPlugin.h"
+#import "CDVPlugin.h"
 #endif
 #import "LoadingView.h"
 
-@interface NotificationEx : PGPlugin {
+@interface NotificationEx : CDVPlugin {
 	NExLoadingView* loadingView;
 }
 
